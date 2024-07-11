@@ -30,7 +30,8 @@ function verificarIntento() {
         numeroDeUsuario === numeroSecreto ?
             (asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`, '#28cc00'),
                 document.getElementById('reiniciar').removeAttribute('disabled'),
-                document.querySelector('#valorUsuario').setAttribute('disabled', 'true'))
+                document.querySelector('#valorUsuario').setAttribute('disabled', 'true'),
+                document.querySelector('#verificar').setAttribute('disabled', 'true'))
             :
             //El usuario no acertó.
             numeroDeUsuario > numeroSecreto ?
@@ -69,9 +70,12 @@ function generarNumeroSecreto() {
 
 
 function condicionesIniciales() {
+    //Indicar mensaje de intervalo de números 
     asignarTextoElemento('h1', 'Juego del número secreto!');
     asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`, 'white');
+    //Generar el número aleatorio
     numeroSecreto = generarNumeroSecreto();
+    //Inicializar el número intentos
     intentos = 1;
 }
 
@@ -80,9 +84,8 @@ function reiniciarJuego() {
     //limpiar caja
     limpiarCaja();
     document.getElementById('valorUsuario').removeAttribute('disabled');
-    //Indicar mensaje de intervalo de números 
-    //Generar el número aleatorio
-    //Inicializar el número intentos
+    document.getElementById('verificar').removeAttribute('disabled');
+
     condicionesIniciales();
     //Deshabilitar el botón de nuevo juego
     document.querySelector('#reiniciar').setAttribute('disabled', 'true');
