@@ -99,7 +99,7 @@ function reiniciarJuego() {
     limpiarCaja();
     //Habilitar el campo
     document.getElementById('valorUsuario').removeAttribute('disabled');
-    //Habilitar el boton para nuevo juego
+    //Habilitar el boton intento
     document.getElementById('verificar').removeAttribute('disabled');
 
     condicionesIniciales();
