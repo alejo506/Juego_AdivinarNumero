@@ -83,7 +83,9 @@ function condicionesIniciales() {
 function reiniciarJuego() {
     //limpiar caja
     limpiarCaja();
+    //Habilitar el campo
     document.getElementById('valorUsuario').removeAttribute('disabled');
+    //Habilitar el boton intento
     document.getElementById('verificar').removeAttribute('disabled');
 
     condicionesIniciales();
